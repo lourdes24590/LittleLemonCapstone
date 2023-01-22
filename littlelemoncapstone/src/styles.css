@@ -1,0 +1,45 @@
+nav ul {
+    list-style: none;
+    text-align: center;
+    margin-left: auto;
+    margin-right: auto;
+}
+nav li {
+    display: inline-block;
+    padding-left: 2%;
+    padding-right: 2%;
+    font-size: 18px;
+    color:black;
+
+}
+nav > ul > li > a {
+    color: black;
+}
+footer {
+    display: flex;
+    padding-left: 40%;
+    padding-right: 25%;
+}
+
+footer img {
+    display: block;
+    width: 5em;
+    height: 3em;
+}
+footer ul {
+    list-style: none;
+    text-align: center;
+    margin-left: auto;
+    margin-right: auto;
+}
+footer li {
+    padding-left: 2%;
+    padding-right: 2%;
+    font-size: 18px;
+    color:black;
+
+}
+
+footer > div > ul > li > a {
+    color: black;
+}
