@@ -5,7 +5,7 @@ function Footer() {
         <div><img src="home icon.svg"/></div>
         <div>
           <ul>
-          <ul><li>Navigation</li></ul>
+          <li><b>Navigation</b></li>
             <li><a href="home.html">Home</a></li>
             <li><a href="about.html">About</a></li>
             <li><a href="menu.html">Menu</a></li>
@@ -14,7 +14,7 @@ function Footer() {
             <li><a href="login.html">Login</a></li>
             </ul>
         </div>
-        <div><ul><li>Contact</li></ul></div>
+        <div><ul><li><b>Contact</b></li></ul></div>
         <div><ul><li>Social Media Links</li></ul></div>
       </footer>
     )
