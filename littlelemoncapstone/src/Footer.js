@@ -2,7 +2,7 @@ import './styles.css';
 function Footer() {
     return (
       <footer>
-        <div><img src="home icon.svg"/></div>
+        <div><img src="home icon.svg" alt="nothing"/></div>
         <div>
           <ul>
           <li><b>Navigation</b></li>
@@ -17,7 +17,7 @@ function Footer() {
         <div><ul><li><b>Contact</b></li></ul></div>
         <div><ul><li>Social Media Links</li></ul></div>
       </footer>
-    )
+    );
 };
 
 export default Footer;

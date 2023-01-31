@@ -1,18 +1,19 @@
 import './styles.css';
+import {Link} from 'react-router-dom';
 function Nav() {
     return (
       <nav>
         <ul>
-            <li><img src="Logo.svg"/></li>
-            <li><a href="home.html">Home</a></li>
-            <li><a href="about.html">About</a></li>
-            <li><a href="menu.html">Menu</a></li>
-            <li><a href="reservations.html">Reservations</a></li>
-            <li><a href="orderonline.html">Order Online</a></li>
-            <li><a href="login.html">Login</a></li>
+            <li><img src="Logo.svg" alt=""/></li>
+            <li><Link to="/" className="nav-item">Home</Link></li>
+            <li><Link to="/" className="nav-item">About</Link></li>
+            <li><Link to="/" className="nav-item">Menu</Link></li>
+            <li><Link to="/booking" className="nav-item">Reservations</Link></li>
+            <li><Link to="/" className="nav-item">Order Online</Link></li>
+            <li><Link to="/" className="nav-item">Login</Link></li>
         </ul>
       </nav>
-    )
+    );
 };
 
 export default Nav;
