@@ -15,7 +15,7 @@ function Footer() {
             </ul>
         </div>
         <div><ul><li><b>Contact</b></li></ul></div>
-        <div><ul><li>Social Media Links</li></ul></div>
+        <div><ul><li><b>Social Media Links</b></li></ul></div>
       </footer>
     );
 };

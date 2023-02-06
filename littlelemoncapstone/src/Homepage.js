@@ -1,6 +1,7 @@
 import './styles.css';
 import Specials from './Specials';
 import Testimonial from './Testimonial';
+import About from './About';
 function Homepage() {
     return (
       <main>
@@ -8,9 +9,7 @@ function Homepage() {
             <div id ="textPart">
               <span id="titleEntry">Little Lemon</span>
               <span style={{paddingTop:'2%',fontSize:'32px'}}>Chicago</span>
-              <p>Little Lemon is a charming neighborhood bistro that serves simple food and 
-                classic cocktails in lively but casual environment. The restaurant features a locally-sourced
-                menu with daily specials.
+              <p>We are a family owned restaurant, focused on traditional recipes served with a modern twist.
               </p>
               <button>Reserve a Table</button>
             </div>
@@ -38,6 +37,7 @@ function Homepage() {
             <Testimonial name="John" image="bruchetta.svg" review="Delicious!" rating="5"/>
             </div>
         </div>
+        <About/>
       </main>
     )
 };
