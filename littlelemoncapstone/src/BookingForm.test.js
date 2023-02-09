@@ -29,7 +29,7 @@ test('updateTimes test', async () => {
     const newTimes= fetchAPI(new Date(Date.parse('2023-02-11')));
     const availableTimes = initializeTimes();
     render(<BookingForm availableTimes={availableTimes} dispatch={(action)=>
-        expect(updateTimes(action)).toStrictEqual(newTimes)
+        expect(updateTimes(null,action)).toStrictEqual(newTimes)
         }/>);
     const dateElement = screen.getByLabelText('Choose date');
     fireEvent.change(dateElement, { target: { value: '2023-02-11'} });
