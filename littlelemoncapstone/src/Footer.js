@@ -1,4 +1,5 @@
 import './styles.css';
+import {Link} from 'react-router-dom';
 function Footer() {
     return (
       <footer>
@@ -6,12 +7,12 @@ function Footer() {
         <div>
           <ul>
           <li><b>Navigation</b></li>
-            <li><a href="home.html">Home</a></li>
-            <li><a href="about.html">About</a></li>
-            <li><a href="menu.html">Menu</a></li>
-            <li><a href="reservations.html">Reservations</a></li>
-            <li><a href="orderonline.html">Order Online</a></li>
-            <li><a href="login.html">Login</a></li>
+            <li><Link to="/" className="nav-item">Home</Link></li>
+            <li><Link to="/" className="nav-item">About</Link></li>
+            <li><Link to="/" className="nav-item">Menu</Link></li>
+            <li><Link to="/booking" className="nav-item">Reservations</Link></li>
+            <li><Link to="/" className="nav-item">Order Online</Link></li>
+            <li><Link to="/" className="nav-item">Login</Link></li>
             </ul>
         </div>
         <div><ul><li><b>Contact</b></li></ul></div>

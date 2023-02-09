@@ -43,7 +43,7 @@ nav > ul > li > Link {
     text-decoration: none;
 }
 footer {
-    margin-top: 5%;
+    margin-top: 10%;
     display: flex;
     align-items: flex-start;
     align-self: center;
@@ -55,6 +55,7 @@ footer img {
     display: flex;
     width: 5em;
     height: 3em;
+    padding-top: 10%;
 }
 footer ul {
     list-style: none;

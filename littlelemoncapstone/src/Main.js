@@ -8,7 +8,7 @@ import {fetchAPI, submitAPI} from './api';
 import ConfirmedBooking from './ConfirmedBooking';
 
 const defaultTimes = ['17:00','18:00','19:00','20:00','21:00','22:00'];
-function updateTimes(availableTimes, action){
+function updateTimes(action){
   const end = new Date(Date.parse(action.date));
   const resp = fetchAPI(end);
   return resp;

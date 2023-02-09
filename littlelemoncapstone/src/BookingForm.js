@@ -1,10 +1,10 @@
 import './styles.css';
-import React, {useState} from 'react';
+import React, {useState, useEffect} from 'react';
 function BookingForm(props) {
-    const [date, setDate] = React.useState([]);
-    const [guests, setGuests] = React.useState([]);
-    const[time,setTime]= React.useState([]);
-    const[occasion,setOcassion]= React.useState([]);
+    const [date, setDate] = React.useState();
+    const [guests, setGuests] = React.useState();
+    const[time,setTime]= React.useState();
+    const[occasion,setOcassion]= React.useState();
     function handleSubmit(e){
         e.preventDefault();
         props.formSubmit(e.target.value);
@@ -17,7 +17,6 @@ function BookingForm(props) {
     function handleGuestsChange(e){
         e.preventDefault();
         setGuests(e.target.value);
-
     }
     function handleOcassionChange(e){
         e.preventDefault();
@@ -27,25 +26,33 @@ function BookingForm(props) {
     function handleTimeChange(e){
         e.preventDefault();
         setTime(e.target.value);
-        //props?.setavailableTimes(e.target.value);
-
     }
+    const [isValid, setValid] = useState(false);
+    const validate = () => {
+        return document.getElementById('res-date').value.length !==0 &&
+        document.getElementById('guests').value.length !==0 && document.getElementById('res-time').value.length !==0 &&
+        document.getElementById('occasion').value.length !==0;
+      };
+    useEffect(() => {
+        const isValid = validate();
+        setValid(isValid);
+      }, [date, guests, occasion, time]);
     return (
         <form style={{display: 'grid', maxWidth: '200px', gap: '20px'}} onSubmit={handleSubmit}>
         <label htmlFor="res-date">Choose date</label>
-        <input type="date" id="res-date" onChange={(e)=>handleDateChange(e)}/>
+        <input type="date" id="res-date" aria-label="calendar date" onChange={(e)=>handleDateChange(e)} required />
         <label htmlFor="res-time">Choose time</label>
-        <select id="res-time" onChange={(e)=>handleTimeChange(e)}>
+        <select id="res-time" onChange={(e)=>handleTimeChange(e)} required >
             {props.availableTimes?.map((time)=>(<option key={time}>{time}</option>))}
         </select>
         <label htmlFor="guests" >Number of guests</label>
-        <input type="number" placeholder={1} min={1} max={10} id="guests" onChange={(e)=>handleGuestsChange(e)} />
+        <input type="number" aria-label="number of guests" placeholder={1} min={1} max={10} id="guests" onChange={(e)=>handleGuestsChange(e)} required />
         <label htmlFor="occasion">Occasion</label>
-        <select id="occasion" onChange={(e)=>handleOcassionChange(e)}>
+        <select id="occasion" onChange={(e)=>handleOcassionChange(e)} required>
           <option>Birthday</option>
           <option>Anniversary</option>
         </select>
-        <button type="submit" defaultValue="Make Your reservation" > Submit </button>
+        <button type="submit" aria-label="submit form" disabled={!isValid}> Submit </button>
       </form>
 );
 }

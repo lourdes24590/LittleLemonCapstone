@@ -32,8 +32,8 @@ function Homepage() {
             <br/>
             <div id="testimonialSet">
             <Testimonial name="John" image="bruchetta.svg" review="Delicious!" rating="5"/>
-            <Testimonial name="John" image="bruchetta.svg" review="Delicious!" rating="5"/>
-            <Testimonial name="John" image="bruchetta.svg" review="Delicious!" rating="5"/>
+            <Testimonial name="Karen" image="lemon dessert.jpg" review="Too sweet" rating="2"/>
+            <Testimonial name="Micah" image="greek salad.jpg" review="Delicious but portion was too small" rating="4"/>
             <Testimonial name="John" image="bruchetta.svg" review="Delicious!" rating="5"/>
             </div>
         </div>
