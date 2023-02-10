@@ -3,6 +3,7 @@ import React, {useState, useEffect} from 'react';
 function BookingForm(props) {
     const [date, setDate] = React.useState();
     const [guests, setGuests] = React.useState();
+    const [name, setName] = React.useState();
     const[time,setTime]= React.useState();
     const[occasion,setOcassion]= React.useState();
     function handleSubmit(e){
@@ -18,6 +19,10 @@ function BookingForm(props) {
         e.preventDefault();
         setGuests(e.target.value);
     }
+    function handleNameChange(e){
+        e.preventDefault();
+        setName(e.target.value);
+    }
     function handleOcassionChange(e){
         e.preventDefault();
         setOcassion(e.target.value);
@@ -31,14 +36,16 @@ function BookingForm(props) {
     const validate = () => {
         return document.getElementById('res-date').value.length !==0 &&
         document.getElementById('guests').value.length !==0 && document.getElementById('res-time').value.length !==0 &&
-        document.getElementById('occasion').value.length !==0;
+        document.getElementById('occasion').value.length !==0 && document.getElementById('name').value.length !==0;
       };
     useEffect(() => {
         const isValid = validate();
         setValid(isValid);
-      }, [date, guests, occasion, time]);
+      }, [date, guests, occasion, time, name]);
     return (
         <form style={{display: 'grid', maxWidth: '200px', gap: '20px'}} onSubmit={handleSubmit}>
+        <label htmlFor="name" >Name</label>
+        <input type="text" pattern="[a-zA-Z\s]+" title='Please enter alphabets only. ' aria-label="guest name" id="name" onChange={(e)=>handleNameChange(e)} required />
         <label htmlFor="res-date">Choose date</label>
         <input type="date" id="res-date" aria-label="calendar date" onChange={(e)=>handleDateChange(e)} required />
         <label htmlFor="res-time">Choose time</label>

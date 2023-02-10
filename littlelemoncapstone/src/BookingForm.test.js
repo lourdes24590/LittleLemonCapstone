@@ -56,11 +56,20 @@ test('missing guests', () => {
     fireEvent.change(screen.getByLabelText("Choose time"), { target: { value: '17:00' } });
     expect(screen.getByText(/Submit/i).closest('button')).toBeDisabled();
 })
-
+test('missing name', () => {
+    render(<BookingForm availableTimes={initializeTimes()} dispatch={jest.fn()} formSubmit={jest.fn()}/>);
+    const input = screen.getByLabelText("Number of guests");
+    fireEvent.change(input, { target: { value: '20' } });
+    fireEvent.change(screen.getByLabelText("Occasion"), { target: { value: 'Birthday' } });
+    fireEvent.change(screen.getByLabelText("Choose date"), { target: { value: '2023-02-18' } });
+    fireEvent.change(screen.getByLabelText("Choose time"), { target: { value: '17:00' } });
+    expect(screen.getByText(/Submit/i).closest('button')).toBeDisabled();
+})
 test('minimum enabled', () => {
     render(<BookingForm availableTimes={initializeTimes()} dispatch={jest.fn()} formSubmit={jest.fn()}/>);
     const input = screen.getByLabelText("Number of guests");
     fireEvent.change(input, { target: { value: '20' } });
+    fireEvent.change(screen.getByLabelText("Name"), { target: { value: 'Joe' } });
     fireEvent.change(screen.getByLabelText("Choose date"), { target: { value: '2023-02-18' } });
     expect(screen.getByText(/Submit/i).closest('button')).not.toBeDisabled();
 })

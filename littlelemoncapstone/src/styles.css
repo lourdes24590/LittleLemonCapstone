@@ -298,3 +298,24 @@ form > button {
     height: 406px;
 
 }
+
+form{
+    font-family: 'Markazi Text';
+}
+
+#guests{
+    font-family: 'Markazi Text';
+}
+
+#confirmedBooking{
+    display: flex;
+    justify-content: center;
+    justify-self: center;
+    align-self: center;
+    align-content: center;
+}
+
+label:after {
+    content:" *";
+    color: red;
+  }
